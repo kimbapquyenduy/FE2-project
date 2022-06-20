@@ -1,0 +1,45 @@
+button{
+    width: 100px;
+    height: 100px;
+    border-radius: 4rem;
+    border: 5px solid;
+    background-color: var(--black);
+    margin: 20px;
+}
+.Green{
+border-color: var(--green);
+}
+.Green:active,
+.Green.active{background-color: var(--green);}
+
+.Blue{border-color: var(--blue);}
+.Blue:active,
+.Blue.active{background-color: var(--blue);}
+
+.Red{border-color: var(--red);}
+.Red:active,
+.Red.active{background-color: var(--red);}
+
+.Yellow{border-color: var(--yellow);}
+.Yellow:active,
+.Yellow.active{background-color: var(--yellow);}
+
+.Orange{border-color: var(--orange);}
+.Orange:active,
+.Orange.active{background-color: var(--orange);}
+
+.Purple{border-color: var(--purple);}
+.Purple:active,
+.Purple.active{background-color: var(--purple);}
+
+.Pink{border-color: var(--pink);}
+.Pink:active,
+.Pink.active{background-color: var(--pink);}
+
+.White{border-color: white;}
+.White:active,
+.White.active{background-color: white;}
+
+.Teal{border-color: var(--teal);}
+.Teal:active,
+.Teal.active{background-color: var(--teal);}

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="flex">
+
+        <app-game-button [active]="colors.Red" color="Red" (guess)="playerGuess($event)">
+        </app-game-button>
+        <app-game-button [active]="colors.Blue" color="Blue" (guess)="playerGuess($event)">
+        </app-game-button>
+        <app-game-button [active]="colors.Green" color="Green" (guess)="playerGuess($event)">
+        </app-game-button>
+    </div>
+
+    <div class="flex">
+        <app-game-button [active]="colors.Yellow" color="Yellow" (guess)="playerGuess($event)">
+        </app-game-button>
+        <app-game-button [active]="colors.Orange" color="Orange" (guess)="playerGuess($event)">
+        </app-game-button>
+        <app-game-button [active]="colors.Purple" color="Purple" (guess)="playerGuess($event)">
+        </app-game-button>
+    </div>
+
+    <div class="flex">
+
+        <app-game-button [active]="colors.Pink" color="Pink" (guess)="playerGuess($event)">
+        </app-game-button>
+        <app-game-button [active]="colors.White" color="White" (guess)="playerGuess($event)">
+        </app-game-button>
+        <app-game-button [active]="colors.Teal" color="Teal" (guess)="playerGuess($event)">
+        </app-game-button>
+    </div>
+    <div class="flex" style="text-align: center;">
+        <a href="#" style="font-size: 50px; text-decoration: none; color: white;" (click)="restart()">
+            Restart
+        </a>
+    </div>
+    <div class="flex" style="text-align: center;">
+        <p style="font-size :2rem ; ">{{count}}</p>
+    </div>
+
+</div>
