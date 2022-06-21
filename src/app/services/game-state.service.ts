@@ -80,14 +80,22 @@ export class GameStateService {
     if (!this.compareMemory()) {
       let score = this.count;
       let choose = confirm("Bạn thua rồi! Vui lòng chơi lại." + "\n" + "Điểm của bạn là: " + score);
-      this.player = [];
+      if (choose == true) {
+        window.location.reload();
+      } else {
+        this.signout();
+
+      }
     }
     this.setState();
   }
   compareMemory(): boolean {
     for (let i = 0; i < this.player.length; i++) {
       if (this.player[i] !== this.memory[i]) {
+
         return false;
+
+
       }
     }
     if (this.player.length === this.memory.length) {
