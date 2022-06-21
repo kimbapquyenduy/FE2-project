@@ -92,10 +92,7 @@ export class GameStateService {
   compareMemory(): boolean {
     for (let i = 0; i < this.player.length; i++) {
       if (this.player[i] !== this.memory[i]) {
-
         return false;
-
-
       }
     }
     if (this.player.length === this.memory.length) {
