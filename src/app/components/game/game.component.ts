@@ -1,7 +1,10 @@
 
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { sleep } from 'src/app/models/constants';
+import { User } from 'src/app/models/user';
 import { GameStateService } from 'src/app/services/game-state.service';
+import { AngularFirestore } from "@angular/fire/compat/firestore";
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-game',
@@ -9,6 +12,7 @@ import { GameStateService } from 'src/app/services/game-state.service';
   styleUrls: ['./game.component.css']
 })
 export class GameComponent implements OnInit {
+
   count: number | undefined;
   colors: any = {
     Red: false,
@@ -22,9 +26,15 @@ export class GameComponent implements OnInit {
     Green: false
 
   };
+  userPoint: User = {
+    id: '',
+    score: '',
+    email: ''
+  };
 
 
-  constructor(private game: GameStateService) { }
+  constructor(private game: GameStateService, private auth: AngularFireAuth,
+    private fs: AngularFirestore) { }
 
   ngOnInit(): void {
     this.game.state.subscribe(state => {
@@ -43,6 +53,9 @@ export class GameComponent implements OnInit {
   restart() {
 
     this.flash(this.game.restartMemory());
+  }
+  logout() {
+    this.game.signout();
   }
   async flash(memory: string[]) {
     for (let i = 0; i < memory.length; i++) {

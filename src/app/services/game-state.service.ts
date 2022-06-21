@@ -78,6 +78,8 @@ export class GameStateService {
   playerGuest(val: string) {
     this.player.push(val);
     if (!this.compareMemory()) {
+      let score = this.count;
+      let choose = confirm("Bạn thua rồi! Vui lòng chơi lại." + "\n" + "Điểm của bạn là: " + score);
       this.player = [];
     }
     this.setState();

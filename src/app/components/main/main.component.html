@@ -29,31 +29,12 @@
                             <h4 class="user">User</h4>
                             <h4 class="score">Score</h4>
                         </div>
-                        <div class="list-user">
+                        <div class="list-user" *ngFor="let score of userScoreList">
                             <h5 class="top">1</h5>
-                            <h5 class="user">a</h5>
-                            <h5 class="score">30</h5>
+                            <h5 class="user">{{score.email}}</h5>
+                            <h5 class="score">{{score.score}}</h5>
                         </div>
-                        <div class="list-user">
-                            <h5 class="top">2</h5>
-                            <h5 class="user">bcsa</h5>
-                            <h5 class="score">28</h5>
-                        </div>
-                        <div class="list-user">
-                            <h5 class="top">3</h5>
-                            <h5 class="user">chg</h5>
-                            <h5 class="score">25</h5>
-                        </div>
-                        <div class="list-user">
-                            <h5 class="top">4</h5>
-                            <h5 class="user">dwew</h5>
-                            <h5 class="score">15</h5>
-                        </div>
-                        <div class="list-user">
-                            <h5 class="top">5</h5>
-                            <h5 class="user">easda</h5>
-                            <h5 class="score">10</h5>
-                        </div>
+
                     </div>
 
                 </div>
@@ -74,30 +55,10 @@
                             <h4 class="user">User</h4>
                             <h4 class="score">Score</h4>
                         </div>
-                        <div class="list-user">
+                        <div class="list-user" *ngFor="let score of userScoreList">
                             <h5 class="top">1</h5>
-                            <h5 class="user">a</h5>
-                            <h5 class="score">30</h5>
-                        </div>
-                        <div class="list-user">
-                            <h5 class="top">2</h5>
-                            <h5 class="user">bcsa</h5>
-                            <h5 class="score">28</h5>
-                        </div>
-                        <div class="list-user">
-                            <h5 class="top">3</h5>
-                            <h5 class="user">chg</h5>
-                            <h5 class="score">25</h5>
-                        </div>
-                        <div class="list-user">
-                            <h5 class="top">4</h5>
-                            <h5 class="user">dwew</h5>
-                            <h5 class="score">15</h5>
-                        </div>
-                        <div class="list-user">
-                            <h5 class="top">5</h5>
-                            <h5 class="user">easda</h5>
-                            <h5 class="score">10</h5>
+                            <h5 class="user">{{score.email}}</h5>
+                            <h5 class="score">{{score.score}}</h5>
                         </div>
                     </div>
 
