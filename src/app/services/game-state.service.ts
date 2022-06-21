@@ -47,6 +47,7 @@ export class GameStateService {
     })
   }
   private get randomColor(): string {
+
     return colors[Math.floor(Math.random() * 9)]
 
   }
@@ -59,6 +60,8 @@ export class GameStateService {
   }
   generateMemory(): string[] {
     this.memory = [];
+    console.log(this.memory);
+
     for (let i = 0; i < this.count; i++) {
       this.appendMemory();
     }
