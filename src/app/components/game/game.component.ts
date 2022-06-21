@@ -41,7 +41,7 @@ export class GameComponent implements OnInit {
     this.game.playerGuest(g);
   }
   restart() {
-    window.location.reload();
+    console.log("a");
   }
   async flash(memory: string[]) {
     for (let i = 0; i < memory.length; i++) {

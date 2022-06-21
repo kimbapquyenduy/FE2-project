@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { colors, start_Count } from '../models/constants';
+import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,8 +13,38 @@ export class GameStateService {
   state = new Subject<any>();
 
 
-  constructor() {
+  constructor(private fireauth: AngularFireAuth, private router: Router) {
     this.count = start_Count
+
+
+  }
+  //login
+  login(email: string, password: string) {
+    this.fireauth.signInWithEmailAndPassword(email, password).then(() => {
+      localStorage.setItem('token', 'true');
+      this.router.navigate(['/game']);
+    }, err => {
+      alert(err.message);
+      this.router.navigate(['/main']);
+    })
+  }
+  //register
+  register(email: string, password: string) {
+    this.fireauth.createUserWithEmailAndPassword(email, password).then(() => {
+      alert("create account successful ! ")
+      this.router.navigate(['/main']);
+    }, err => {
+      alert(err.message);
+      this.router.navigate(['/main']);
+    })
+  }
+  signout() {
+    this.fireauth.signOut().then(() => {
+      localStorage.removeItem(`token`);
+      this.router.navigate([`/main`]);
+    }, err => {
+      alert(err.message);
+    })
   }
   private get randomColor(): string {
     return colors[Math.floor(Math.random() * 9)]
