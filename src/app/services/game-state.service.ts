@@ -40,6 +40,8 @@ export class GameStateService {
   }
   signout() {
     this.fireauth.signOut().then(() => {
+      this.restartMemory();
+      this.player = [];
       localStorage.removeItem(`token`);
       this.router.navigate([`/main`]);
     }, err => {
@@ -83,8 +85,9 @@ export class GameStateService {
       if (choose == true) {
         window.location.reload();
       } else {
+        // this.restartMemory();
+        // this.player = [];
         this.signout();
-
       }
     }
     this.setState();
